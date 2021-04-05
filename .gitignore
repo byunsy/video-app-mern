@@ -1,0 +1,5 @@
+# All modules in node_modules
+node_modules
+
+# For keeping ID and PW secure during development process.
+dev.js
