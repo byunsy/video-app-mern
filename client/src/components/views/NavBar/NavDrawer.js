@@ -48,6 +48,7 @@ function NavDrawer(props) {
       >
         <a href="/">Home</a>
         <a href="/">About</a>
+        <a href="/video/upload">Upload</a>
         <a onClick={logoutHandler}>Sign Out</a>
       </Drawer>
     );
