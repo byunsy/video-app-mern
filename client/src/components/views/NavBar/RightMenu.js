@@ -34,6 +34,9 @@ function RightMenu(props) {
   } else {
     return (
       <Menu mode="horizontal" style={{ display: "inline" }}>
+        <Menu.Item key="upload">
+          <a href="/video/upload">Upload</a>
+        </Menu.Item>
         <Menu.Item key="logout">
           <a onClick={logoutHandler}>Sign Out</a>
         </Menu.Item>
