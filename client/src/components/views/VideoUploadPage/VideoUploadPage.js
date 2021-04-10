@@ -7,18 +7,14 @@ const { Dragger } = Upload;
 const { TextArea } = Input;
 
 function VideoUploadPage() {
-  // Dropzone elements
-  //   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
-  //   const files = acceptedFiles.map((file) => (
-  //     <span key={file.path}>
-  //       {file.path} - {file.size} bytes
-  //     </span>
-  //   ));
+  const fileList = [];
 
   const uploadProps = {
     name: "file",
     multiple: true,
     action: "https://run.mocky.io/v3/3c5a2214-4ddf-4663-9d4f-888d6ecf6656",
+    defaultFileList: [...fileList],
+    listType: "picture",
     onChange(info) {
       const { status } = info.file;
       if (status !== "uploading") {
@@ -73,60 +69,15 @@ function VideoUploadPage() {
       </div>
 
       <Form onSubmit>
-        <div
-          className="container"
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginBottom: "-1rem",
-            flexWrap: "wrap",
-          }}
-        >
-          {/* DROP ZONE =================================================== */}
-          {/* <section>
-            <div
-              style={{
-                width: "340px",
-                height: "240px",
-                border: "3px solid #d8d8d8",
-                textAlign: "center",
-                paddingTop: "65px",
-              }}
-              {...getRootProps({ className: "dropzone" })}
-            >
-              <input {...getInputProps()} />
-              <PlusOutlined style={{ fontSize: "3rem", margin: "1rem", color: "gray" }} />
-              <p style={{ color: "gray" }}>Drag your videos here, or click to select videos.</p>
-            </div>
-            <aside style={{ marginTop: "1rem" }}>
-              <h4>File:&nbsp;&nbsp;{files}</h4>
-            </aside>
-          </section> */}
-          <Dragger {...uploadProps} style={{ maxWidth: "410px" }}>
-            <p className="ant-upload-drag-icon">
-              <InboxOutlined />
-            </p>
-            <p className="ant-upload-text">Click or drag file to this area to upload</p>
-            <p className="ant-upload-hint">
-              Support for a single or bulk upload. Strictly prohibit from uploading company data or
-              other band files.
-            </p>
-          </Dragger>
-
-          {/* THUMBNAIL =================================================== */}
-          <div
-            style={{
-              width: "250px",
-              height: "250px",
-              border: "2px solid #d8d8d8",
-              textAlign: "center",
-              paddingTop: "110px",
-            }}
-          >
-            <p style={{ color: "gray" }}>Thumbnail</p>
-            <img />
-          </div>
-        </div>
+        {/* DROP ZONE =================================================== */}
+        <Dragger {...uploadProps}>
+          <br />
+          <p className="ant-upload-drag-icon">
+            <InboxOutlined />
+          </p>
+          <p className="ant-upload-text">Click or drag file to this area to upload</p>
+          <br />
+        </Dragger>
         <br />
         <br />
 
