@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Input, Button, Form, Select, Upload, Space, message, Radio } from "antd";
-import { useDropzone } from "react-dropzone";
-import { PlusOutlined, InboxOutlined } from "@ant-design/icons";
+import { InboxOutlined } from "@ant-design/icons";
 
 const { Dragger } = Upload;
 const { TextArea } = Input;
